@@ -25,7 +25,7 @@ export default {
 }
 .home-page .home-speeddial {
   position: absolute;
-  top: calc(50% - 2rem);
+  top: calc(40% - 2rem);
   left: calc(50% - 2rem);
 }
 </style>

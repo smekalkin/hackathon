@@ -9,10 +9,16 @@ import { RouterLink, RouterView } from 'vue-router';
         <i v-if="$store.getters.historyBack" class="fa-solid fa-angle-left" @click="onClickBack"></i>
       </div>
       <div>
-        <RouterLink v-if="$store.getters['client/one'].name" class="navbar-brand text-center" :to="{ name: 'Home' }">
-          <i class="fa-solid fa-plus me-2"></i>
-          <span>{{ $store.getters['client/one'].name }}</span>
-        </RouterLink>
+        <div v-if="pathname !== '/client' || (this.route && this.route.path !== '/client')">
+          <RouterLink v-if="$store.getters['client/one'].name" class="navbar-brand text-center" :to="{ name: 'Home' }">
+            <i class="fa-solid fa-plus me-2"></i>
+            <span>{{ $store.getters['client/one'].name }}</span>
+          </RouterLink>
+        </div>
+        <span v-else class="p-input-icon-left">
+          <i class="pi pi-search" />
+          <InputText type="text" v-model="value1" placeholder="Поиск" />
+        </span>
       </div>
       <span>&nbsp;</span>
     </div>
@@ -25,23 +31,30 @@ import { RouterLink, RouterView } from 'vue-router';
   <nav class="navbar navbar-expand-lg bg-light fixed-bottom">
     <div class="container-fluid">
       <RouterLink class="nav-link text-center" :to="{ name: 'FilterCreate' }">
-        <i class="fa-solid fa-magnifying-glass fa-2x"></i>
-        <div>Искать</div>
+        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        <div><small>Искать</small></div>
       </RouterLink>
       <RouterLink class="nav-link text-center" :to="{ name: 'Filter' }">
-        <i class="fa-solid fa-clock fa-2x"></i>
-        <div>История</div>
+        <i class="fa-solid fa-clock fa-lg"></i>
+        <div><small>История</small></div>
       </RouterLink>
-      <RouterLink class="nav-link text-center" :to="{ name: 'Client' }">
-        <i class="fa-solid fa-user-clock fa-2x"></i>
-        <div>Клиенты</div>
-      </RouterLink>
-      <RouterLink class="nav-link text-center" :to="''">
-        <i class="fa-solid fa-bars fa-2x"></i>
-        <div>Еще</div>
-      </RouterLink>
+      <a href="/client" class="nav-link text-center">
+        <i class="fa-solid fa-user-clock fa-lg"></i>
+        <div><small>Клиенты</small></div>
+      </a>
+      <span class="nav-link text-center" @click="isOther = !isOther">
+        <i class="fa-solid fa-bars fa-lg"></i>
+        <div><small>Еще</small></div>
+      </span>
     </div>
   </nav>
+
+  <div v-if="isOther" class="position-fixed bg-white p-3" style="bottom: 64px; left: 0; right: 0">
+    <RouterLink class="nav-link text-center" :to="''">
+      <i class="fa-solid fa-graduation-cap fa-lg me-2"></i>
+      <small>Обучение</small>
+    </RouterLink>
+  </div>
 
   <Toast position="bottom-left" group="bl" />
 </template>
@@ -49,13 +62,21 @@ import { RouterLink, RouterView } from 'vue-router';
 <script>
 import Menubar from 'primevue/menubar';
 import Toast from 'primevue/toast';
+import InputText from 'primevue/inputtext';
+import { useRoute } from 'vue-router';
 
 export default {
-  components: { Menubar, Toast },
+  components: { Menubar, Toast, InputText },
   data() {
-    return {};
+    return {
+      route: null,
+      pathname: window.location.pathname,
+      isOther: false,
+    };
   },
   mounted() {
+    this.route = useRoute();
+
     this.$primevue.config.locale.accept = this.$t('Yes');
     this.$primevue.config.locale.reject = this.$t('No');
     this.$primevue.config.locale.today = this.$t('Today');

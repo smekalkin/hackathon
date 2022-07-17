@@ -39,6 +39,12 @@ const router = createRouter({
       component: () => import('../modules/client/views/client/Create.vue'),
       meta: { auth: false },
     },
+    {
+      path: '/client/:id',
+      name: 'ClientShow',
+      component: () => import('../modules/client/views/client/Show.vue'),
+      meta: { auth: false },
+    },
 
     // Filter
     {

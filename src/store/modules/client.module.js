@@ -11,6 +11,7 @@ export default {
     mutations: {
         set(state, client) {
             if (client.isNewRecord) {
+                client.id = state.clients.length ? state.clients[state.clients.length - 1].id + 1 : 1
                 state.clients.push(client);
             }
             client.isNewRecord = false;

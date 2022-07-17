@@ -35,7 +35,7 @@ export default {
       if (!this.service.getError()) {
         this.$store.commit('client/set', service);
 
-        this.$router.push({ name: 'FilterCreate' });
+        window.location.href = '/filter/create'; // это пока оставляем, чтобы заголовок обновился
       }
     },
   },

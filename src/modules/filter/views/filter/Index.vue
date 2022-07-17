@@ -12,10 +12,10 @@
       "
       @click="onClick(filter)"
     >
-      <div v-if="filter.cityId" class="row">
+      <!-- <div v-if="filter.cityId" class="row">
         <div class="col fw-bold">Город:</div>
         <div class="col">{{ filter.cityId }}</div>
-      </div>
+      </div> -->
       <div v-if="filter.costFrom" class="row">
         <div class="col fw-bold">Цена от:</div>
         <div class="col">{{ $str.money(filter.costFrom) }}</div>
