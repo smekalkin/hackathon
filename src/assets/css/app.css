@@ -32,3 +32,8 @@
 .p-speeddial a {
     text-decoration: none;
 }
+
+/* toast */
+.p-toast-bottom-left {
+    left: 3px;
+}

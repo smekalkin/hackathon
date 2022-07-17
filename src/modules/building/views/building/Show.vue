@@ -25,15 +25,15 @@
         <Button label="Ипотека" icon="fa-solid fa-clock" class="p-button-secondary d-block w-100" />
       </div>
     </div>
-    <h3>Похожие варианты</h3>
+    <h3 class="mt-3">Похожие варианты</h3>
     <div class="row">
-      <div v-for="building of buildings" class="p-field-radiobutton col-6" :key="building">
+      <div v-for="building of buildings" class="p-field-radiobutton col-6 mb-3 mt-3" :key="building">
         <div class="text-center">
           <img
             v-if="building.imgs"
             :src="baseUrl + '/src/assets/imgs/' + building.imgs[0].url"
             :alt="building.typeName"
-            style="max-width: 100%; max-height: 250px"
+            style="max-width: 100%; height: 150px"
           />
         </div>
         <div>

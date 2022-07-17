@@ -49,7 +49,7 @@ import { RouterLink, RouterView } from 'vue-router';
     </div>
   </nav>
 
-  <div v-if="isOther" class="position-fixed bg-white p-3" style="bottom: 64px; left: 0; right: 0">
+  <div v-if="isOther" class="position-fixed bg-white p-3 border-top border-bottom" style="bottom: 64px; left: 0; right: 0">
     <RouterLink class="nav-link text-center" :to="''">
       <i class="fa-solid fa-graduation-cap fa-lg me-2"></i>
       <small>Обучение</small>

@@ -10,9 +10,9 @@ export default {
     },
     mutations: {
         set(state, filter) {
-            if (filter.isNewRecord) {
+            // if (filter.isNewRecord) {
                 state.filters.push(filter);
-            }
+            // }
             filter.isNewRecord = false;
 
             Storage.setItem('filter', filter);

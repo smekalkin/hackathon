@@ -8,7 +8,7 @@
               v-if="data.imgs"
               :src="baseUrl + '/src/assets/imgs/' + data.imgs[0].url"
               :alt="data.typeName"
-              style="max-width: 100%; max-height: 250px"
+              style="max-width: 100%; height: 225px"
             />
           </div>
           <div class="d-flex justify-content-between">
@@ -26,9 +26,13 @@
               </div>
             </div>
             <div>
-              <div>
-                <a class="btn" href="#">
-                  <i v-if="data.isOtherAgent" class="text-danger fa-solid fa-user-tie me-2"></i>
+              <div :class="data.isOtherAgent ? '' : 'invisible'">
+                <a
+                  class="btn"
+                  href="#"
+                  @click.prevent="$toast.warn({ detail: 'Объект был показан клиенту другим агентом' })"
+                >
+                  <i class="text-danger fa-solid fa-user-tie me-2"></i>
                 </a>
               </div>
               <div>

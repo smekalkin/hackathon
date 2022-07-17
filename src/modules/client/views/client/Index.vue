@@ -39,6 +39,12 @@ import Button from 'primevue/button';
 
 export default {
   components: { Button },
+  created() {
+    let clients = this.$store.getters['client/all'];
+    if (!clients.length) {
+      this.$router.push({ name: 'Home' });
+    }
+  },
   methods: {
     onClick(client) {
       this.$store.commit('client/set', client);

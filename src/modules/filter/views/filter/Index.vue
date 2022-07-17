@@ -13,7 +13,7 @@
       @click="onClick(filter)"
     >
       <!-- <div v-if="filter.cityId" class="row">
-        <div class="col fw-bold">Город:</div>
+        <div class="col fw-bold">Район:</div>
         <div class="col">{{ filter.cityId }}</div>
       </div> -->
       <div v-if="filter.costFrom" class="row">
@@ -25,7 +25,7 @@
         <div class="col">{{ $str.money(filter.costTo) }}</div>
       </div>
       <div v-if="filter.area" class="row">
-        <div class="col fw-bold">Площадь:</div>
+        <div class="col fw-bold">Площадь от:</div>
         <div class="col">{{ filter.area }}</div>
       </div>
       <div v-if="filter.date" class="row">
@@ -50,6 +50,12 @@
 </template>
 <script>
 export default {
+  created() {
+    let filters = this.$store.getters['filter/all'];
+    if (!filters.length) {
+      this.$router.push({ name: 'Home' });
+    }
+  },
   methods: {
     onClick(filter) {
       this.$store.commit('filter/set', filter);

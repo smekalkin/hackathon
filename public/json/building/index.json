@@ -4,7 +4,7 @@
             "id": 1,
             "typeName": "1к. квартира",
             "districtName": "Фестивальный",
-            "area": 58,
+            "area": 41,
             "description": "Хорошая угловая однокомнатная квартира",
             "imgs": [
                 {
@@ -14,33 +14,55 @@
             "cost": 5400000,
             "floor": 5,
             "floors": 16,
-            "linkIds": [
-                3,
-                5,
-                8
-            ],
-            "isOtherAgent": true
+            "isOtherAgent": false
         },
         {
             "id": 2,
-            "typeName": "1к. квартира",
-            "districtName": "Фестивальный",
-            "area": 58,
-            "description": "Хорошая угловая однокомнатная квартира",
+            "typeName": "2к. квартира",
+            "districtName": "Губернский",
+            "area": 59.7,
+            "description": "Отличная светлая двушка",
             "imgs": [
                 {
-                    "url": "1k.jpeg"
+                    "url": "2k.svg"
                 }
             ],
-            "cost": 5400000,
-            "floor": 5,
-            "floors": 16,
-            "linkIds": [
-                3,
-                5,
-                8
-            ],
+            "cost": 10250000,
+            "floor": 1,
+            "floors": 25,
             "isOtherAgent": true
+        },
+        {
+            "id": 3,
+            "typeName": "3к. квартира",
+            "districtName": "Юбилейный",
+            "area": 77.5,
+            "description": "Отличная светлая трешка",
+            "imgs": [
+                {
+                    "url": "3k.svg"
+                }
+            ],
+            "cost": 14500000,
+            "floor": 9,
+            "floors": 9,
+            "isOtherAgent": false
+        },
+        {
+            "id": 4,
+            "typeName": "Студия",
+            "districtName": "Центр",
+            "area": 24.6,
+            "description": "Отличная светлая студия",
+            "imgs": [
+                {
+                    "url": "0k.svg"
+                }
+            ],
+            "cost": 3800000,
+            "floor": 15,
+            "floors": 16,
+            "isOtherAgent": false
         }
     ]
 }
