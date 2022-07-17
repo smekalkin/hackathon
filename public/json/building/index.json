@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "typeName": "1к. квартира",
+            "districtName": "Фестивальный",
+            "area": 58,
+            "description": "Хорошая угловая однокомнатная квартира",
+            "imgs": [
+                {
+                    "url": "1k.jpeg"
+                }
+            ],
+            "cost": 5400000,
+            "floor": 5,
+            "floors": 16,
+            "linkIds": [
+                3,
+                5,
+                8
+            ],
+            "isOtherAgent": true
+        },
+        {
+            "id": 2,
+            "typeName": "1к. квартира",
+            "districtName": "Фестивальный",
+            "area": 58,
+            "description": "Хорошая угловая однокомнатная квартира",
+            "imgs": [
+                {
+                    "url": "1k.jpeg"
+                }
+            ],
+            "cost": 5400000,
+            "floor": 5,
+            "floors": 16,
+            "linkIds": [
+                3,
+                5,
+                8
+            ],
+            "isOtherAgent": true
+        }
+    ]
+}

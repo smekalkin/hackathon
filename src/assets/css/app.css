@@ -1,0 +1,34 @@
+/* buttons */
+.custom-speeddial-small .p-speeddial-button.p-button.p-button-icon-only {
+    width: 2rem !important;
+    height: 2rem !important;
+    border: none !important;
+}
+.custom-speeddial-small .p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
+    font-size: 0.8rem !important;
+}
+.custom-speeddial-small .p-speeddial-action {
+    width: 2rem !important;
+    height: 2rem !important;
+}
+.custom-speeddial-small .p-speeddial-action .pi {
+    font-size: 0.8rem;
+}
+.custom-speeddial-fixed {
+    position: fixed !important;
+    right: 15px;
+    bottom: 90px;
+}
+.custom-speeddial-search {
+    position: fixed !important;
+    right: 15px;
+    bottom: 78px;
+}
+.custom-speeddial-left {
+    position: fixed !important;
+    left: 275px;
+    bottom: 15px;
+}
+.p-speeddial a {
+    text-decoration: none;
+}
