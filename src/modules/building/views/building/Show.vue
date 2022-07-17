@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div class="text-center position-relative">
-      <Button icon="fa-solid fa-percent" class="p-button-secondary position-absolute p-button-outlined" style="top: 10px; right: 0;" />
+      <Button
+        icon="fa-solid fa-percent"
+        class="p-button-secondary position-absolute p-button-outlined"
+        style="top: 10px; right: 0"
+      />
       <img
         v-if="service.imgs"
-        :src="baseUrl + '/src/assets/imgs/' + service.imgs[0].url"
+        :src="baseUrl + '/imgs/' + service.imgs[0].url"
         :alt="service.typeName"
         style="max-width: 100%; max-height: 250px"
       />
@@ -27,11 +31,16 @@
     </div>
     <h3 class="mt-3">Похожие варианты</h3>
     <div class="row">
-      <div v-for="building of buildings" class="p-field-radiobutton col-6 mb-3 mt-3" :key="building">
+      <div
+        v-for="building of buildings"
+        class="p-field-radiobutton col-6 mb-3 mt-3"
+        :key="building"
+        @click="onClick(building)"
+      >
         <div class="text-center">
           <img
             v-if="building.imgs"
-            :src="baseUrl + '/src/assets/imgs/' + building.imgs[0].url"
+            :src="baseUrl + '/imgs/' + building.imgs[0].url"
             :alt="building.typeName"
             style="max-width: 100%; height: 150px"
           />
@@ -60,6 +69,11 @@ export default {
   async created() {
     await this.service.show(this.$route.params.id);
     this.buildings = await this.service.all();
+  },
+  methods: {
+    onClick(data) {
+      window.location.href = '/building/' + data.id;
+    },
   },
 };
 </script>

@@ -6,7 +6,7 @@
           <div class="text-center" @click="onClick(data)">
             <img
               v-if="data.imgs"
-              :src="baseUrl + '/src/assets/imgs/' + data.imgs[0].url"
+              :src="baseUrl + '/imgs/' + data.imgs[0].url"
               :alt="data.typeName"
               style="max-width: 100%; height: 225px"
             />

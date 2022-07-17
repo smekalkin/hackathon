@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router';
         <i v-if="$store.getters.historyBack" class="fa-solid fa-angle-left" @click="onClickBack"></i>
       </div>
       <div>
-        <div v-if="pathname !== '/client' || (this.route && this.route.path !== '/client')">
+        <div v-if="pathname !== '/client' || (route && route.path !== '/client')">
           <RouterLink v-if="$store.getters['client/one'].name" class="navbar-brand text-center" :to="{ name: 'Home' }">
             <i class="fa-solid fa-plus me-2"></i>
             <span>{{ $store.getters['client/one'].name }}</span>
